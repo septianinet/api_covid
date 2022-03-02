@@ -5,6 +5,7 @@ const morgan = require("morgan");
 const { fetchUpdate, insertData, updateData } = require("./services");
 
 const cron = require("node-cron");
+const logger = require("./lib/logger");
 
 const port = 3005;
 
@@ -34,6 +35,7 @@ cron.schedule("59 11 * * *", updateData);
 
 app.listen(port, () => {
   console.log(`App berjalan di port ${port}`);
+  logger.info(`App berjalan di port ${port}`);
 
   updateData(new Date());
 });

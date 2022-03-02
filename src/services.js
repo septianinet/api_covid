@@ -1,5 +1,6 @@
 const { default: axios } = require("axios");
 const db = require("./config/db");
+const logger = require("./lib/logger");
 
 // This function will insert manually data to database
 const insertData = async (req, res) => {
@@ -93,11 +94,12 @@ const updateData = async (now) => {
       if (update_data.rowCount < 1) {
         throw Error("Failed to fetch data!");
       }
-      console.log(`${now} - Successfully updated! `);
+      logger.info(`Successfully updated!`);
     } else {
-      console.log(`${now} - No changes is made. Data is the lastest update`);
+      logger.info(`No changes is made. Data is the lastest update`);
     }
   } catch (error) {
+    logger.error(error);
     return error;
   }
 };
