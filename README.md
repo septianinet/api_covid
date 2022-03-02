@@ -7,3 +7,7 @@
 3. Clone this repo and execute `yarn install` in command line
 4. Start project by executing `yarn start`
     
+## How to test it
+
+1. Execute `http://localhost:your_port/fetch` to updates the data covid
+2. Execute `http://localhost:your_port/updates` to see the lastest data.
