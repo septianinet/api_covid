@@ -2,7 +2,7 @@
   "port": 3005,
   "logConfig": {
     "logFolder": ".//logs//",
-    "logFile": "NodeWinstonApp-%DATE%.log",
+    "logFile": "covid-%DATE%.log",
     "logLevel": "info"
     }
 }

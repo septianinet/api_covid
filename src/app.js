@@ -34,7 +34,6 @@ cron.schedule("59 11 * * *", updateData);
 // cron.schedule("*/1 * * * *", updateData);
 
 app.listen(port, () => {
-  console.log(`App berjalan di port ${port}`);
   logger.info(`App berjalan di port ${port}`);
 
   updateData(new Date());
