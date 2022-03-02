@@ -27,7 +27,10 @@ app.get("/updates", fetchUpdate);
 app.post("/additional", insertData);
 
 // This is a cron job, set to every 11:59 PM. this will update the database if there is a change in Public API
-cron.schedule("*/1 * * * *", updateData);
+cron.schedule("59 11 * * *", updateData);
+
+// This is a cron job, set to every minutes. this will update the database if there is a change in Public API
+// cron.schedule("*/1 * * * *", updateData);
 
 app.listen(port, () => {
   console.log(`App berjalan di port ${port}`);
